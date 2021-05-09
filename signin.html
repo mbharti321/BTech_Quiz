@@ -1,0 +1,52 @@
+<div class="jumbotron ">
+    <h1>Sign In</h1>
+</div>
+<form id="loginForm" method="POST">
+    <h2>Sign to your account</h2>
+    <br>
+    <div style="padding: 10px;">
+        <label for="loginUsername">Username:&nbsp;</label>
+        <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" value="" required>
+    </div>
+    <div style="padding: 10px;">
+        <label for="loginPassword">Password: &nbsp;</label>
+        <input id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
+    </div>
+
+    <button id="loginBtn" style="margin: 10px;"  name="loginButton">LOG IN</button>
+
+    <div class="hasAccountText">
+        <span id="hideLogin">Don't have an account yet?
+            <!-- <a style="color: dodgerblue;" id="signupLink" href="" >Signup here.</a> -->
+            <a href="" style="color: dodgerblue;" id="signupLink">Signup here.</a>
+        </span>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#signupLink").on("click", function () {
+                $("#content").load("signup.html");
+                return false;
+            });
+        });
+
+        $(document).ready(function () {
+            $("#loginBtn").on("click", function () {
+                console.log("myArr");
+                $("#content").load("quiz-rules.html");
+                
+                return false;
+            });
+        });
+
+        // function loadQuizRules() {
+        //     console.log("myArr");
+        //     $("#content").load("quiz-rules.html");
+        // }
+
+
+    </script>
+
+</form>

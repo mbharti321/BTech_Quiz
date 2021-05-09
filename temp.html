@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+// $(document).ready(function(){
+   
+//    $('#content').load("signup.html");
+
+// });
+
+// function loadPage(){
+//     // $("#content").load("signup.html");
+//     document.getElementById("content").innerHTML='<object type="text/html" data="signup.html"></object>';
+// }
+$(document).ready( function() {
+    $("#loadButton").on("click", function() {
+        $("#content").load("signup.html");
+    });
+});
+// function loadPage() {
+//     $('#content').load("signup.html");
+// }
+</script>
+</head>
+<body>
+
+<div id="content"></div>
+<button id="loadButton" onclick="loadPage">Load</button>
+
+</body>
+</html>

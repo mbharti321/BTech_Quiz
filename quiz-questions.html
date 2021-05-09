@@ -1,0 +1,60 @@
+<div class="jumbotron css-center">
+    <h1>Quiz Questions</h1>
+</div>
+<form id="quizRules" method="POST">
+    <!-- Print question -->
+    <div style="text-align: left; display: flex; font-weight: bold;">
+        <div id="questionNum">
+            1.
+        </div>
+        <div id="question">
+            why did the IPL 2021 get canceled?
+        </div>
+    </div>
+    <br>
+    <!-- print options -->
+    <div class="option-container">
+        <div class="answer-option">
+            <input type="radio" id="option1" name="option" value="">
+            <label for="male">Political reason</label>
+        </div>
+        <div class="answer-option">
+            <input type="radio" id="option2" name="option" value="">
+            <label for="female">COVID-19</label>
+        </div>
+        <div class="answer-option">
+            <input type="radio" id="option3" name="option" value="">
+            <label for="other">Rain</label>
+        </div>
+        <div class="answer-option">
+            <input type="radio" id="option4" name="option" value="">
+            <label for="other">Player were not interested</label>
+        </div>
+
+
+    </div>
+
+    <div style="display: flex; justify-content: space-arround;">
+        <button style="margin: 10px; " type="submit" id="previousBtn" name="previousBtn">Previous</button>
+        <button style="margin: 10px; " type="submit" id="nextBtn" name="nextBtn">Next</button>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#startQuizBtn").on("click", function () {
+                var rulesCheck = document.getElementById("rulesCheck");
+                console.log(rulesCheck.checked);
+                if (rulesCheck.checked) {
+                    $("#content").load("startQuiz.html");
+                }
+                else {
+                    alert("Please select \"I agree\"!!!");
+                }
+                return false;
+            });
+        });
+    </script>
+
+</form>
