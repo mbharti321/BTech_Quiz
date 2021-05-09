@@ -137,16 +137,20 @@ button{
 
 @media only screen and (max-width:700px) {
     nav ul{
-        width:100%;
+        width: 35%;
         background: linear-gradient(rgb(212, 0, 255), rgb(1, 192, 151));
         position: absolute;
-        top: 75px;
-        right:10px;
-        z-index:2;
+        text-align: center;
+        top: 80px;
+        right: 0px;
+        z-index: 2;
+        border-bottom: solid 1px white;
     }
     nav ul li{
-        display: block;
-        margin-top: 15px 0;
+    display: block;
+    margin: 5% 0;
+    padding: 8% 0px;
+    border-bottom: solid 1px #fff;
     }
     nav ul li a{
         color: #FFF;
@@ -159,7 +163,7 @@ button{
     } 
     #menuList{
         overflow: hidden;
-        transition: 1.5s;
+        transition: 1s;
     }  
     .display-container{
         margin: 0px -20px;
