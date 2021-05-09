@@ -43,17 +43,8 @@
 
     <script>
         $(document).ready(function () {
-            $("#startQuizBtn").on("click", function () {
-                var rulesCheck = document.getElementById("rulesCheck");
-                console.log(rulesCheck.checked);
-                if (rulesCheck.checked) {
-                    $("#content").load("startQuiz.html");
-                }
-                else {
-                    alert("Please select \"I agree\"!!!");
-                }
-                return false;
-            });
+            var element = document.getElementById("testTakerCounter");
+            element.classList.add("testTakerCounter");            
         });
     </script>
 

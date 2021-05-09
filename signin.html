@@ -2,25 +2,24 @@
     <h1>Sign In</h1>
 </div>
 <form id="loginForm" method="POST">
-    <h2>Sign to your account</h2>
+    <h2>Sign in to your account</h2>
     <br>
-    <div style="padding: 10px;">
-        <label for="loginUsername">Username:&nbsp;</label>
-        <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" value="" required>
+    <div class="form-group">
+        <label for="loginEmail">User email-id:&nbsp;</label>
+        <input id="loginEmail" name="loginEmail" type="text" placeholder="e.g. bartSimpson" value="" required>
     </div>
-    <div style="padding: 10px;">
+    <div class="form-group" >
         <label for="loginPassword">Password: &nbsp;</label>
         <input id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
     </div>
 
-    <button id="loginBtn" style="margin: 10px;"  name="loginButton">LOG IN</button>
+    <button id="loginBtn" style="margin: 10px;" onclick="return validateUser()" name="loginButton">LOG IN</button>
 
-    <div class="hasAccountText">
+    <!-- <div class="hasAccountText">
         <span id="hideLogin">Don't have an account yet?
-            <!-- <a style="color: dodgerblue;" id="signupLink" href="" >Signup here.</a> -->
             <a href="" style="color: dodgerblue;" id="signupLink">Signup here.</a>
         </span>
-    </div>
+    </div> -->
 
 
 
@@ -31,15 +30,18 @@
                 return false;
             });
         });
-
         $(document).ready(function () {
-            $("#loginBtn").on("click", function () {
-                console.log("myArr");
-                $("#content").load("quiz-rules.html");
-                
-                return false;
-            });
+            var element = document.getElementById("testTakerCounter");
+            element.classList.add("testTakerCounter");            
         });
+        // $(document).ready(function () {
+        //     $("#loginBtn").on("click", function () {
+        //         console.log("myArr");
+        //         $("#content").load("quiz-rules.html");                
+        //         return false;
+        //     });
+        // });
+        
 
         // function loadQuizRules() {
         //     console.log("myArr");

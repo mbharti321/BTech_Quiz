@@ -16,6 +16,8 @@
     width: 100%;
     display:flex;
     align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .logo{
     width: 100px;
@@ -79,6 +81,15 @@ button{
     border-radius: 10px;
 }
 
+form{
+    text-align: left;
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
 .auto-scroll{
     height:390px; 
     overflow-y:auto"
@@ -96,11 +107,7 @@ button{
     /* margin-left: 50px; */
 }
 
-/* .col-1{
-    flex-basis: 40%;
-    position: relative;
-    margin-left: 50px;
-} */
+
 
 .jumbotron {
     padding: 3px;
@@ -110,9 +117,9 @@ button{
     /* margin-top: 30px; */
     color: inherit;
     background-color: rgb(138, 138, 138);
-  }
+}
 
-  .heading {
+.heading {
     display: flex;
     flex-direction: row;
     background-color: #646fa7fa;
@@ -121,6 +128,10 @@ button{
     justify-content: space-between;            
 }
 
+
+.testTakerCounter{
+    display: none;
+}
 .option-container{
    text-align: left; 
    display: flex; 
@@ -144,7 +155,7 @@ button{
         top: 80px;
         right: 0px;
         z-index: 2;
-        border-bottom: solid 1px white;
+        /* border-bottom: solid 1px white; */
     }
     nav ul li{
     display: block;

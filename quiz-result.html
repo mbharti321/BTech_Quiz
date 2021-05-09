@@ -1,8 +1,8 @@
 <div class="jumbotron css-center">
-    <h1>Quiz Rules</h1>
+    <h1>Quiz Result</h1>
 </div>
 <form id="quizRules" method="POST">
-    <h3 style="text-align: left;">Please go through the rules carefully.</h3>
+    <h3 style="text-align: left;">Here is you result</h3>
     <br>
     <div style="text-align: left;">
         <ul style=" list-style:decimal; padding-left: 30px; margin: 14px 0;">
@@ -15,24 +15,21 @@
             <li>Do not move out of the quiz window else your quiz will be auto submitted.</li>
         </ul>
 
-        <input type="checkbox" style=" margin:10px 0 10px 20px" id="rulesCheck" name="rulesCheck">
+        <input type="checkbox" style= " margin:10px 0 10px 20px" id="rulesCheck" name="rulesCheck" >
         <label for="rulesCheck"> I agree.</label><br>
     </div>
 
-    <button style="margin: 10px;" type="submit" id="startQuizBtn" onclick="return validateCheck()"
-        name="startQuizBtn">Start Quiz</button>
+    <button style="margin: 10px;" type="submit" id="startQuizBtn" name="startQuizBtn">Start Quiz</button>
 
-
+    
 
 
 
     <script>
-        //loading login page on the load of index page
         $(document).ready(function () {
             var element = document.getElementById("testTakerCounter");
             element.classList.remove("testTakerCounter");            
-        });     
-      
+        });
     </script>
 
 </form>
