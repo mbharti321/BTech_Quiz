@@ -161,6 +161,9 @@ button{
         overflow: hidden;
         transition: 1.5s;
     }  
+    .display-container{
+        margin: 0px -20px;
+    }
 
     .heading{
         flex-direction: column;
