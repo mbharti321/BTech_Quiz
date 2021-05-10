@@ -2,33 +2,37 @@
     <h1>Quiz Result</h1>
 </div>
 <form id="quizRules" method="POST">
-    <h3 style="text-align: left;">Here is you result</h3>
+    <h3 style="text-align: left;">Here is your result:</h3>
     <br>
-    <div style="text-align: left;">
-        <ul style=" list-style:decimal; padding-left: 30px; margin: 14px 0;">
-            <li>Quiz will contain total 10 questions.</li>
-            <li>One point will be awarded for each correct answer.</li>
-            <li>No half marks will be awarded.</li>
-            <li>Each question has four options.</li>
-            <li>Do not refresh the page.</li>
-            <li>Final score will be shown after the submission of the quiz.</li>
-            <li>Do not move out of the quiz window else your quiz will be auto submitted.</li>
-        </ul>
-
-        <input type="checkbox" style= " margin:10px 0 10px 20px" id="rulesCheck" name="rulesCheck" >
-        <label for="rulesCheck"> I agree.</label><br>
+    <div class="result-div">
+        <div>
+            <h5>Total Questions:</h5>
+            <h4 id="totalCount">Total</h4>
+        </div>
+        <div>
+            <h5>Correct Answers:</h5>
+            <h4 id="correctCount">correctCount</h4>
+        </div>
+        <div>
+            <h5>Percentage:</h5>
+            <h4 id="correctPercent">correctPercent</h4>
+        </div>
     </div>
+    <div style="margin: 10px; background: linear-gradient(to right, rgb(137 247 223 / 70%), #c17ee878);">
+        <span style="border-bottom: solid 1px white;font-size: small; font-weight: bold;">
+            Q.No. | Correct | User answer | Correct Answer 
+        </span>
+        <div id="resultDiv">
 
-    <button style="margin: 10px;" type="submit" id="startQuizBtn" name="startQuizBtn">Start Quiz</button>
-
-    
-
+        </div>
+    </div>
 
 
     <script>
         $(document).ready(function () {
             var element = document.getElementById("testTakerCounter");
-            element.classList.remove("testTakerCounter");            
+            element.classList.remove("testTakerCounter");
+            showUserResult();
         });
     </script>
 

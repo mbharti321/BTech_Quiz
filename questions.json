@@ -1,0 +1,114 @@
+{
+    "questions": [
+        {
+            "questionNo": "1",
+            "question": "Q1. What is capital of India?",
+            "ans": "Delhi",
+            "options": [
+                "Newwork",
+                "Delhi",
+                "Chenai",
+                "Mumbai"
+            ]
+        },
+        {
+            "questionNo": "2",
+            "question": "Q2. What is capital of Panjab?",
+            "ans": "Chandigarh",
+            "options": [
+                "Bangalore",
+                "Delhi",
+                "Kolkata",
+                "Chandigarh"
+            ]
+        },
+        {
+            "questionNo": "3",
+            "question": "Q3. What is capital of West Bangal?",
+            "ans": "Kolkata",
+            "options": [
+                "Bangalore",
+                "Delhi",
+                "Kolkata",
+                "Chandigarh"
+            ]
+        },
+        {
+            "questionNo": "3",
+            "question": "Q3. What is capital of Goa?",
+            "ans": "Panji",
+            "options": [
+                "Bangalore",                
+                "Kolkata",
+                "Panji",
+                "Chandigarh"
+            ]
+        },
+        {
+            "questionNo": "4",
+            "question": "Q4. What is capital of Karnatka?",
+            "ans": "Bangalore",
+            "options": [                
+                "Kolkata",
+                "Bangalore",
+                "Delhi",
+                "Chandigarh"
+            ]
+        },
+        {
+            "questionNo": "6",
+            "question": "Q6. What is capital of Bihar?",
+            "ans": "Patna",
+            "options": [                
+                "Patna",
+                "Bangalore",
+                "Delhi",
+                "Bhopal"
+            ]
+        },
+        {
+            "questionNo": "7",
+            "question": "Q7. What is capital of Maharastra?",
+            "ans": "Mumbai",
+            "options": [                
+                "Patna",
+                "Bangalore",
+                "Delhi",
+                "Mumbai"
+            ]
+        },
+        {
+            "questionNo": "8",
+            "question": "Q8. What is capital of Tamilnadu?",
+            "ans": "Chenai",
+            "options": [                
+                "Kolkata",
+                "Bangalore",
+                "Chenai",
+                "Bhopal"
+            ]
+        },
+        {
+            "questionNo": "9",
+            "question": "Q9. What is capital of Assam?",
+            "ans": "Dispur",
+            "options": [                
+                "Patna",
+                "Dispur",
+                "Delhi",
+                "Bhopal"
+            ]
+        },
+        {
+            "questionNo": "10",
+            "question": "Q10. What is capital of Jharkhand?",
+            "ans": "Ranchi",
+            "options": [                
+                "Patna",
+                "Ranchi",
+                "Delhi",
+                "Mumbai"
+            ]
+        }
+    ]
+}
