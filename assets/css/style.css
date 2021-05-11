@@ -76,7 +76,8 @@ button{
     border: none;
     padding: 8px 0;
     font-size: large;
-    background: linear-gradient(to right, hsl(113, 86%, 35%),hsl(32, 84%, 58%));
+    color: #FFF;
+    background: linear-gradient(to right, hsl(113deg 99% 35%),hsl(235deg 88% 35%));
     font-weight: bold;
     border-radius: 10px;
 }
