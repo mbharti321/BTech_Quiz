@@ -32,9 +32,7 @@ $(document).ready(function () {
 
 
 
-
-
-
+//login validation
 function validateUser() {
     var enteredEmail = document.getElementById("loginEmail").value;
     var enteredPassword = document.getElementById("loginPassword").value;
@@ -50,8 +48,8 @@ function validateUser() {
 
     if (validUser) {
         alert("Login successful.");
+        //if correct credential, load quiz rules page
         $("#content").load("quiz-rules.html");
-
     }
     else {
         alert("Invaild credentials!!! \nPlease try again.........");
@@ -77,24 +75,17 @@ function validateCheck() {
 
 var currQuestionNum = 0;
 var currAnswer = "";
-let userAnswers = [];
+let userAnswers = [];// store user answers
 var correctCount = 0;
 
+function initializeUserAnswerMap() {    
+    for(let i=0; i < questions.length; i++){
+        userAnswers[i] = [i + 1, "Not attempted"];
+    }
+}
 //function
 function loadFirstQuestion() {
-    var currQuestion = questions[0]["question"];
-    currAnswer = questions[0]["ans"];
-    var currOptions = questions[0]["options"];
-
-    document.getElementById("question").innerHTML = currQuestion;
-    document.getElementById("option1").value = currOptions[0];
-    document.getElementById("option2").value = currOptions[1];
-    document.getElementById("option3").value = currOptions[2];
-    document.getElementById("option4").value = currOptions[3];
-    document.getElementById("option1Lable").innerHTML = currOptions[0];
-    document.getElementById("option2Lable").innerHTML = currOptions[1];
-    document.getElementById("option3Lable").innerHTML = currOptions[2];
-    document.getElementById("option4Lable").innerHTML = currOptions[3];
+    loadQuestion(0);
 }
 
 
@@ -108,9 +99,6 @@ function loadNextQuestion() {
     var submitBtn = document.getElementById("submitBtn");
     var nextBtn = document.getElementById("nextBtn");
 
-    // if (currQuestionNum < questions.length - 1) {
-    //     currQuestionNum += 1;
-    // } 
     if (currQuestionNum == questions.length - 1) {
         submitBtn.style.display = "block";
         submitBtn.style.background = "#3371e2";
@@ -119,26 +107,8 @@ function loadNextQuestion() {
         // alert("This is the last Question.!!");
     }
 
-
-
-    var currQuestion = questions[currQuestionNum]["question"];
-    currAnswer = questions[currQuestionNum]["ans"];
-    var currOptions = questions[currQuestionNum]["options"];
-
-
-    document.getElementById("question").innerHTML = currQuestion;
-    document.getElementById("option1").value = currOptions[0];
-    document.getElementById("option2").value = currOptions[1];
-    document.getElementById("option3").value = currOptions[2];
-    document.getElementById("option4").value = currOptions[3];
-    document.getElementById("option1Lable").innerHTML = currOptions[0];
-    document.getElementById("option2Lable").innerHTML = currOptions[1];
-    document.getElementById("option3Lable").innerHTML = currOptions[2];
-    document.getElementById("option4Lable").innerHTML = currOptions[3];
-
-    
+    loadQuestion(currQuestionNum);    
     clearAllRadioBtn();
-
 }
 
 
@@ -156,9 +126,15 @@ function loadPreviousQuestion() {
         alert("This is the first Question.!!");
         return false;
     }
-    var currQuestion = questions[currQuestionNum]["question"];
-    currAnswer = questions[currQuestionNum]["ans"];
-    var currOptions = questions[currQuestionNum]["options"];
+    loadQuestion(currQuestionNum);
+    // clearAllRadioBtn();
+}
+
+//standard funtion for loading question
+function loadQuestion(quesNum){
+    var currQuestion = questions[quesNum]["question"];
+    currAnswer = questions[quesNum]["ans"];
+    var currOptions = questions[quesNum]["options"];
 
     document.getElementById("question").innerHTML = currQuestion;
     document.getElementById("option1").value = currOptions[0];
@@ -169,29 +145,39 @@ function loadPreviousQuestion() {
     document.getElementById("option2Lable").innerHTML = currOptions[1];
     document.getElementById("option3Lable").innerHTML = currOptions[2];
     document.getElementById("option4Lable").innerHTML = currOptions[3];
-    // clearAllRadioBtn();
 }
-
 
 function validateAnswer() {
     var selectedAnswer = document.querySelector('input[name="option"]:checked');
 
     if (selectedAnswer != null) {
-        // document.getElementById("optionDetail").innerHTML = selectedAnswer.value + "  option is selected";
         // alert(selectedAnswer.value + "  option is selected");
         var isCorrect = false;
         if (selectedAnswer.value == currAnswer) {
-            isCorrect = true;            
-            correctCount += 1;
+            isCorrect = true; 
+            if(userAnswers[currQuestionNum][1] != "Attempted"){
+                correctCount += 1;
+            }
+            else if(userAnswers[currQuestionNum][1] == "Attempted" && !userAnswers[currQuestionNum][2]){
+                            correctCount += 1;
+            }
         }
-        // 
-        userAnswers.push([currQuestionNum + 1, isCorrect, selectedAnswer.value, currAnswer]);
+        else{
+            if(userAnswers[currQuestionNum][1] == "Attempted" && userAnswers[currQuestionNum][2]){
+                correctCount -= 1;
+            }
+        }
+        
+        // push user response
+        userAnswers[currQuestionNum] = [currQuestionNum + 1, "Attempted", isCorrect, selectedAnswer.value, currAnswer];
         console.log(userAnswers);
+        console.log(correctCount);
         return true;
     }
     else {
         alert("No option Selected!\nPlease look back to this question..");
-        // return false;
+        // return false;      
+        // console.log(userAnswers);
         return true;
     }
 
@@ -210,7 +196,7 @@ function clearAllRadioBtn() {
     
 }
 
-
+//load result page once submit button is clicked
 function loadResultPage() {
     if (!validateAnswer()) {
         return false;
@@ -218,14 +204,14 @@ function loadResultPage() {
     $("#content").load("quiz-result.html");
 }
 
-
+//funstion to load user result 
 function showUserResult() {
 
     document.getElementById("totalCount").innerHTML = questions.length;
     document.getElementById("correctCount").innerHTML = correctCount;
     document.getElementById("correctPercent").innerHTML = correctCount / questions.length * 100 + " %";
   
-
+    //load each answer details
     $(document).ready(function () {
         for (var i in userAnswers) {
             var element = document.createElement("p");
@@ -239,8 +225,6 @@ function showUserResult() {
 function showAnswers() {
 
 }
-function initializeUserAnswerMap() {
 
-}
 
 

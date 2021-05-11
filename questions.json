@@ -34,8 +34,8 @@
             ]
         },
         {
-            "questionNo": "3",
-            "question": "Q3. What is capital of Goa?",
+            "questionNo": "4",
+            "question": "Q4. What is capital of Goa?",
             "ans": "Panji",
             "options": [
                 "Bangalore",                
@@ -45,8 +45,8 @@
             ]
         },
         {
-            "questionNo": "4",
-            "question": "Q4. What is capital of Karnatka?",
+            "questionNo": "5",
+            "question": "Q5. What is capital of Karnatka?",
             "ans": "Bangalore",
             "options": [                
                 "Kolkata",
