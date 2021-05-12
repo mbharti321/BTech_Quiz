@@ -13,7 +13,7 @@
         },
         {
             "questionNo": "2",
-            "question": "Q2. What is capital of Panjab?",
+            "question": "Q2. What is capital of Punjab?",
             "ans": "Chandigarh",
             "options": [
                 "Bangalore",
@@ -84,7 +84,7 @@
             "options": [                
                 "Kolkata",
                 "Bangalore",
-                "Chenai",
+                "Chennai",
                 "Bhopal"
             ]
         },
